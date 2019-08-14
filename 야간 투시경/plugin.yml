@@ -1,8 +1,0 @@
----
-name: NightVision
-main: nightvision\Main
-version: 1.0.0
-author: sHwacho
-api:
-- 4.0.0
-...
