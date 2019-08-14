@@ -1,0 +1,32 @@
+<?php
+
+<?php
+
+namespace night;
+
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
+use pocketmine\entity\effect\EffectInstance;
+use pocketmine\entity\effect\VanillaEffects;
+use pocketmine\event\Listener;
+use pocketmine\player\Player;
+use pocketmine\plugin\PluginBase;
+
+class Main extends PluginBase implements Listener {
+    public function onEnable() {
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+    }
+
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
+        $command = $command->getName();
+        $player = $sender;
+        $name = $sender->getName();
+        $tag = "§l§f[ §6야간투시 §f] §r§6";
+        if ($player instanceof Player && $command == "야간투시") {
+            $player->getEffects()->add(new EffectInstance (VanillaEffects::NIGHT_VISION(), 99999, 1));
+            $sender->sendMessage($tag . "야간투시가 지급 되었습니다.");
+            return true;
+        }
+        return true;
+    }
+}
