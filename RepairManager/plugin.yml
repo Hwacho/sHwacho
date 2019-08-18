@@ -1,0 +1,8 @@
+name: RepairManager
+main: RepairManager\Main
+author: sHwacho
+api: [4.0.0]
+version: 1.0.0
+commands:
+  수리:
+    description: 관리진 전용 수리 명령어 입니다.
